@@ -36,7 +36,7 @@ informacji dotycz±cych uniksowej (i mo¿e z innych wielozadaniowych
 systemów operacyjnych) tabeli procesów. Impuls do stworzenia tego
 pojawi³ siê wraz z frustracj± autora przy analizie wyj¶cia poleceñ ps
 z ró¿nych systemów w celu sprawdzenia, czy okre¶lone procesy dzia³aj±
-na ró¿nych maszynach w du¿ym zestawie ró¿nych uniksów. Format wyj¶cia
+na ró¿nych maszynach w du¿ym zestawie ró¿nych Uniksów. Format wyj¶cia
 ps by³ ró¿ny na ka¿dym systemie, a czasem zmienia³ siê wraz z now±
 wersj± systemu. Poza tym uruchamianie procesu ps z Perla lub skryptu
 pow³oki i analiza jego wyj¶cia nie by³y zbyt wydajnym ani estetycznym
