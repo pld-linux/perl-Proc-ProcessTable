@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do perform "make test" (requires mounted /proc)
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Proc
@@ -9,7 +9,7 @@ Summary:	Proc::ProcessTable - Perl interface to the UNIX process table
 Summary(pl):	Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
 Version:	0.39
-Release:	1
+Release:	2
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
