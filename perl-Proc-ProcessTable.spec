@@ -4,8 +4,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Proc
 %define	pnam	ProcessTable
-Summary:	Proc::ProcessTable - Perl interface to the unix process table.
-#Summary(pl):	Proc::ProcessTable - perlowy interfejs do uniksowych tabeli procesów
+Summary:	Proc::ProcessTable - Perl interface to the unix process table
+Summary(pl):	Proc::ProcessTable - perlowy interfejs do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
 Version:	0.35
 Release:	1
@@ -22,13 +22,22 @@ Unix (and maybe other multitasking OS's) process table information.
 The impetus for this came about with my frustration at having to parse
 the output of various systems' ps commands to check whether specific
 processes were running on different boxes at a larged mixed Unix site.
-The output format of ps was different on each OS, and sometimes changed
-with each new release of an OS. Also, running a ps subprocess from within
-a perl or shell script and parsing the output was not a very efficient
-or aesthetic way to do things.
+The output format of ps was different on each OS, and sometimes
+changed with each new release of an OS. Also, running a ps subprocess
+from within a perl or shell script and parsing the output was not a
+very efficient or aesthetic way to do things.
 
-# %description -l pl
-# TODO
+%description -l pl
+Ten modu³ to pierwsza próba udostêpnienia spójnego interfejsu do
+informacji dotycz±cych uniksowej (i mo¿e z innych wielozadaniowych
+systemów operacyjnych) tabeli procesów. Impuls do stworzenia tego
+pojawi³ siê wraz z frustracj± autora przy analizie wyj¶cia poleceñ ps
+z ró¿nych systemów w celu sprawdzenia, czy okre¶lone procesy dzia³aj±
+na ró¿nych maszynach w du¿ym zestawie ró¿nych uniksów. Format wyj¶cia
+ps by³ ró¿ny na ka¿dym systemie, a czasem zmienia³ siê wraz z now±
+wersj± systemu. Poza tym uruchamianie procesu ps z Perla lub skryptu
+pow³oki i analiza jego wyj¶cia nie by³y zbyt wydajnym ani estetycznym
+sposobem.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -57,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/%{pdir}/%{pnam}
 %dir %{perl_sitearch}/auto/%{pdir}/%{pnam}
 %{perl_sitearch}/auto/%{pdir}/%{pnam}/*.so
-%{perl_sitearch}/auto/%{pdir}/%{pnam}/*.bs
+%attr(755,root,root) %{perl_sitearch}/auto/%{pdir}/%{pnam}/*.bs
 %{perl_sitearch}/auto/%{pdir}/%{pnam}/Process
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/*
