@@ -1,14 +1,15 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Proc
-%define	pnam	ProcessTable
+%define		pdir	Proc
+%define		pnam	ProcessTable
 Summary:	Proc::ProcessTable - Perl interface to the unix process table
 Summary(pl):	Proc::ProcessTable - perlowy interfejs do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
 Version:	0.35
-Release:	2
+Release:	3
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -64,11 +65,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README README.linux PORTING Changes TODO
-%{perl_sitearch}/%{pdir}/*.pm
-%{perl_sitearch}/%{pdir}/%{pnam}
-%dir %{perl_sitearch}/auto/%{pdir}/%{pnam}
-%attr(755,root,root) %{perl_sitearch}/auto/%{pdir}/%{pnam}/*.so
-%{perl_sitearch}/auto/%{pdir}/%{pnam}/*.bs
-%{perl_sitearch}/auto/%{pdir}/%{pnam}/Process
-%{_examplesdir}/%{name}-%{version}
+%dir %{perl_sitearch}/Proc
+%{perl_sitearch}/Proc/*.pm
+%{perl_sitearch}/Proc/ProcessTable
+%dir %{perl_sitearch}/auto/Proc
+%dir %{perl_sitearch}/auto/Proc/ProcessTable
+%attr(755,root,root) %{perl_sitearch}/auto/Proc/ProcessTable/*.so
+%{perl_sitearch}/auto/Proc/ProcessTable/*.bs
+%{perl_sitearch}/auto/Proc/ProcessTable/Process
+%dir %{_examplesdir}/%{name}-%{version}
+%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.pl
 %{_mandir}/man3/*
