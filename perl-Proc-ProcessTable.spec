@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Proc
@@ -8,15 +8,14 @@
 Summary:	Proc::ProcessTable - Perl interface to the unix process table
 Summary(pl):	Proc::ProcessTable - perlowy interfejs do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
-Version:	0.38
-Release:	2
+Version:	0.39
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	69d25190ed3bfd56f12c9e6932528c62
-BuildRequires:	perl-devel >= 5.6
+# Source0-md5:	c153cf906e8b71ac847fa5c3e79970de
 BuildRequires:	perl-Storable
-BuildRequires:	perl-modules
+BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,15 +50,16 @@ sposobem.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -a example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
