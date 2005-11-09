@@ -8,13 +8,13 @@
 Summary:	Proc::ProcessTable - Perl interface to the UNIX process table
 Summary(pl):	Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
-Version:	0.39
-Release:	4
+Version:	0.40
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c153cf906e8b71ac847fa5c3e79970de
+# Source0-md5:	77dc9967f963561663c8f6b9f77be33a
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
