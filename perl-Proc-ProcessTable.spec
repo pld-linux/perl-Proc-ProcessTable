@@ -6,7 +6,7 @@
 %define		pdir	Proc
 %define		pnam	ProcessTable
 Summary:	Proc::ProcessTable - Perl interface to the UNIX process table
-Summary(pl):	Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesów
+Summary(pl.UTF-8):   Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesÃ³w
 Name:		perl-Proc-ProcessTable
 Version:	0.41
 Release:	1
@@ -30,16 +30,16 @@ changed with each new release of an OS. Also, running a ps subprocess
 from within a perl or shell script and parsing the output was not a
 very efficient or aesthetic way to do things.
 
-%description -l pl
-Ten modu³ to pierwsza próba udostêpnienia spójnego interfejsu do
-informacji dotycz±cych uniksowej (i mo¿e z innych wielozadaniowych
-systemów operacyjnych) tabeli procesów. Impuls do stworzenia tego
-pojawi³ siê wraz z frustracj± autora przy analizie wyj¶cia poleceñ ps
-z ró¿nych systemów w celu sprawdzenia, czy okre¶lone procesy dzia³aj±
-na ró¿nych maszynach w du¿ym zestawie ró¿nych Uniksów. Format wyj¶cia
-ps by³ ró¿ny na ka¿dym systemie, a czasem zmienia³ siê wraz z now±
-wersj± systemu. Poza tym uruchamianie procesu ps z Perla lub skryptu
-pow³oki i analiza jego wyj¶cia nie by³y zbyt wydajnym ani estetycznym
+%description -l pl.UTF-8
+Ten moduÅ‚ to pierwsza prÃ³ba udostÄ™pnienia spÃ³jnego interfejsu do
+informacji dotyczÄ…cych uniksowej (i moÅ¼e z innych wielozadaniowych
+systemÃ³w operacyjnych) tabeli procesÃ³w. Impuls do stworzenia tego
+pojawiÅ‚ siÄ™ wraz z frustracjÄ… autora przy analizie wyjÅ›cia poleceÅ„ ps
+z rÃ³Å¼nych systemÃ³w w celu sprawdzenia, czy okreÅ›lone procesy dziaÅ‚ajÄ…
+na rÃ³Å¼nych maszynach w duÅ¼ym zestawie rÃ³Å¼nych UniksÃ³w. Format wyjÅ›cia
+ps byÅ‚ rÃ³Å¼ny na kaÅ¼dym systemie, a czasem zmieniaÅ‚ siÄ™ wraz z nowÄ…
+wersjÄ… systemu. Poza tym uruchamianie procesu ps z Perla lub skryptu
+powÅ‚oki i analiza jego wyjÅ›cia nie byÅ‚y zbyt wydajnym ani estetycznym
 sposobem.
 
 %prep
