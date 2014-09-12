@@ -77,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Proc
 %dir %{perl_vendorarch}/auto/Proc/ProcessTable
 %attr(755,root,root) %{perl_vendorarch}/auto/Proc/ProcessTable/*.so
-%{perl_vendorarch}/auto/Proc/ProcessTable/*.bs
 %{perl_vendorarch}/auto/Proc/ProcessTable/Process
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.pl
