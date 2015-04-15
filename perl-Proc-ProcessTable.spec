@@ -1,21 +1,20 @@
 #
 # Conditional build:
 %bcond_with	tests	# do perform "make test" (requires mounted /proc)
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Proc
 %define		pnam	ProcessTable
+%include	/usr/lib/rpm/macros.perl
 Summary:	Proc::ProcessTable - Perl interface to the UNIX process table
 Summary(pl.UTF-8):	Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
-Version:	0.48
-Release:	4
+Version:	0.49
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Proc/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ddc2c67cd1184ddb0ba1f84e89b90e2a
-Patch0:		format.patch
+# Source0-md5:	6bb75f4717bce5cf866d68f6c13321bd
 URL:		http://search.cpan.org/dist/Proc-ProcessTable/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -46,7 +45,6 @@ sposobem.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
@@ -59,11 +57,11 @@ sposobem.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+mv $RPM_BUILD_ROOT{%{perl_vendorarch}/Proc/example.pl,%{_examplesdir}/%{name}-%{version}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Proc/ProcessTable
 %attr(755,root,root) %{perl_vendorarch}/auto/Proc/ProcessTable/*.so
 %{perl_vendorarch}/auto/Proc/ProcessTable/Process
-%dir %{_examplesdir}/%{name}-%{version}
-%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.pl
-%{_mandir}/man3/*
+%{_mandir}/man3/Proc::Killall.3pm*
+%{_mandir}/man3/Proc::Killfam.3pm*
+%{_mandir}/man3/Proc::ProcessTable*
+%{_examplesdir}/%{name}-%{version}
