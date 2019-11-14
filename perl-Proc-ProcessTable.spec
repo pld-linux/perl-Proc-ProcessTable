@@ -8,13 +8,13 @@
 Summary:	Proc::ProcessTable - Perl interface to the UNIX process table
 Summary(pl.UTF-8):	Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
-Version:	0.55
+Version:	0.59
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Proc/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d480d408d2da7fb0043ed3ec8492ed87
+# Source0-md5:	3330a3648eeaad54d19a091742a2ac5a
 URL:		http://search.cpan.org/dist/Proc-ProcessTable/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -60,15 +60,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-mv $RPM_BUILD_ROOT{%{perl_vendorarch}/Proc/example.pl,%{_examplesdir}/%{name}-%{version}}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README README.linux PORTING Changes
+%doc README README.linux Changes
 %dir %{perl_vendorarch}/Proc
 %{perl_vendorarch}/Proc/*.pm
 %{perl_vendorarch}/Proc/ProcessTable
@@ -79,4 +76,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Proc::Killall.3pm*
 %{_mandir}/man3/Proc::Killfam.3pm*
 %{_mandir}/man3/Proc::ProcessTable*
-%{_examplesdir}/%{name}-%{version}
