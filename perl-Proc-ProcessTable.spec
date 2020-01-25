@@ -4,7 +4,6 @@
 
 %define		pdir	Proc
 %define		pnam	ProcessTable
-%include	/usr/lib/rpm/macros.perl
 Summary:	Proc::ProcessTable - Perl interface to the UNIX process table
 Summary(pl.UTF-8):	Proc::ProcessTable - interfejs perlowy do uniksowej tabeli procesów
 Name:		perl-Proc-ProcessTable
